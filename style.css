@@ -1,27 +1,72 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: white;
     font-family: Arial, Verdena, sans-serif;
-    font-size: 14px;
+    font-size: 1.2vw;
+    background-color: inherit;
+    box-sizing:border-box;
 }
 
-body {
+html {
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 140vh;
+}
+
+html > body {
+    width: 80vw;
+    background-color: grey;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows:
+        15% 75%% 10%;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+html > body > * {
+    padding: 2.5vw;
+    background-color: white;
+}
+
+html > body > header#nameplate {
+    background-color: red;
+    color: white;
+    grid-area: header;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns:
+        85% auto;
+    grid-template-rows:
+        30% auto;
+    grid-template-areas:
+        " title date "
+        " title   .  ";
+}
+
+html > body > header#nameplate > h1 {
+    grid-area: title;
+}
+
+html > body > header#nameplate > p#date {
+    grid-area: date;
+    align-self: baseline;
 }
 
 main {
-    width: 80vw;
-    padding: 2.5vw;
+    width: 100%;
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
+        "first_part "
+        "second_part"
 }
 
-#nameplate {
-    background-color: red;
-    color: white;
-}
 
 h1 {
     font-family: Impact, Charcoal, sans-serif;
@@ -30,6 +75,10 @@ h1 {
     background-color: inherit;
 }
 
+footer {
+    grid-area: footer;
+}
+/*
 #date {
     align-self: flex-start;
     margin-top: 2rem;
@@ -48,6 +97,10 @@ h1 {
     margin-top: 2rem;
 }
 .main_section {}
+
+figure {
+    display: inline-block;
+}
 
 .main_figure {
     grid-area: pic;
@@ -97,4 +150,6 @@ h1 {
     column-gap: 2%;
 }
 
-.footer {}
+.footer {
+    display: block;
+} */
