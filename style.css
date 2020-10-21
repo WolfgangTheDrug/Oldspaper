@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Verdena, sans-serif;
-    font-size: 1.2vw;
+    font-size: 1.0vw;
     background-color: inherit;
     box-sizing:border-box;
 }
@@ -11,6 +11,10 @@ html {
     display: grid;
     justify-content: center;
     align-items: center;
+
+    --articleWidth: 49%;
+    --columnGap: 2%;
+    --titleFontSize: 10rem;
 }
 
 html > body {
@@ -20,7 +24,9 @@ html > body {
     justify-content: center;
     align-items: center;
     grid-template-rows:
-        15% 75%% 10%;
+        10%
+        auto
+        10%;
     grid-template-areas:
         "header"
         "main"
@@ -33,6 +39,7 @@ html > body > * {
 }
 
 html > body > header#nameplate {
+    height: 100%;
     background-color: red;
     color: white;
     grid-area: header;
@@ -51,6 +58,10 @@ html > body > header#nameplate {
 
 html > body > header#nameplate > h1 {
     grid-area: title;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: var(--titleFontSize);
+    letter-spacing: calc(.1 * var(--titleFontSize));
+    background-color: inherit;
 }
 
 html > body > header#nameplate > p#date {
@@ -58,21 +69,56 @@ html > body > header#nameplate > p#date {
     align-self: baseline;
 }
 
-main {
+html > body > main {
     width: 100%;
     grid-area: main;
     display: grid;
+    grid-template-rows:
+        35% auto;
+    grid-column-gap: var(--columnGap);
     grid-template-areas:
         "first_part "
         "second_part"
 }
 
+html > body > main > section {
+    width: auto;
+    display: grid;
+    grid-template-columns:
+        var(--articleWidth) var(--articleWidth);
+    grid-gap: var(--columnGap);
+}
 
-h1 {
-    font-family: Impact, Charcoal, sans-serif;
-    font-size: 10rem;
-    letter-spacing: 1rem;
-    background-color: inherit;
+html > body > main > section > article {
+    columns: calc(var(--titleFontSize) * 1.4); /* +/-17vw */
+}
+
+html > body > main > section > article > figure {
+    display: block;
+    width: 100%;
+}
+
+html > body > main > section > figure > img {
+    width: 100%;
+}
+
+html > body > main > section > figure > figcaption.credit {
+    text-align: center;
+}
+
+html > body > main > section > article > header.main_headline {
+    column-span: all;
+    margin-bottom: calc(var(--titleFontSize) * .2);
+}
+
+html > body > main > section > article > header.main_headline > h2.headline {
+    font-size: calc(var(--titleFontSize) * .2);
+    margin-bottom: calc(var(--titleFontSize) * .2);
+}
+
+html > body > main > section > article > figure.figure > img {
+    display: block;
+  max-width: 100%;
 }
 
 footer {
