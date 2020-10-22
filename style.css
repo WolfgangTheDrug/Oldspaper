@@ -24,9 +24,9 @@ html > body {
     justify-content: center;
     align-items: center;
     grid-template-rows:
-        10%
+        16%
         auto
-        10%;
+        5%;
     grid-template-areas:
         "header"
         "main"
@@ -36,6 +36,7 @@ html > body {
 html > body > * {
     padding: 2.5vw;
     background-color: white;
+
 }
 
 html > body > header#nameplate {
@@ -70,7 +71,6 @@ html > body > header#nameplate > p#date {
 }
 
 html > body > main {
-    width: 100%;
     grid-area: main;
     display: grid;
     grid-template-rows:
@@ -78,7 +78,8 @@ html > body > main {
     grid-column-gap: var(--columnGap);
     grid-template-areas:
         "first_part "
-        "second_part"
+        "second_part";
+    grid-row-gap: calc(var(--titleFontSize) * .5);
 }
 
 html > body > main > section {
@@ -119,6 +120,11 @@ html > body > main > section > article > header.main_headline > h2.headline {
 html > body > main > section > article > figure.figure > img {
     display: block;
   max-width: 100%;
+}
+
+html > body > main > section > article > h4,
+html > body > main > section > article > header > h3.headline {
+    margin-bottom: .5rem;
 }
 
 footer {
