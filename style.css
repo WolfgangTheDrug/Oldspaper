@@ -4,12 +4,11 @@
     font-family: Arial, Verdena, sans-serif;
     font-size: 1.4vw;
     background-color: inherit;
-    box-sizing:border-box;
-    text-align:justify
+    box-sizing: border-box;
+    text-align: justify;
 }
 
 html {
-
     --articleWidth: 98%;
     --columnGap: 2%;
     --titleFontSize: 12rem;
@@ -23,7 +22,6 @@ html > body {
 html > body > * {
     padding: 2.5vw;
     background-color: white;
-
 }
 
 html > body > header#nameplate {
@@ -51,7 +49,6 @@ html > body > header#nameplate > p#date {
     grid-area: date;
     font-size: 2rem;
 }
-
 
 html > body > main > section > article > figure {
     display: block;
@@ -101,19 +98,10 @@ html > body > main > section > article > header.main_headline >.by_line {
   margin-top: .5rem;
 }
 
-/* footer {
-    grid-area: footer;
-} */
-
-
 @media (min-width: 1080px) {
     * {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Verdena, sans-serif;
         font-size: 1.0vw;
         background-color: inherit;
-        box-sizing:border-box;
     }
 
     html {
@@ -128,7 +116,6 @@ html > body > main > section > article > header.main_headline >.by_line {
 
     html > body {
         width: 80vw;
-        background-color: grey;
         display: grid;
         justify-content: center;
         align-items: center;
@@ -142,16 +129,7 @@ html > body > main > section > article > header.main_headline >.by_line {
             "footer";
     }
 
-    html > body > * {
-        padding: 2.5vw;
-        background-color: white;
-
-    }
-
     html > body > header#nameplate {
-        height: 100%;
-        background-color: red;
-        color: white;
         grid-area: header;
 
         display: grid;
@@ -166,16 +144,7 @@ html > body > main > section > article > header.main_headline >.by_line {
             " title   .  ";
     }
 
-    html > body > header#nameplate > h1 {
-        grid-area: title;
-        font-family: Impact, Charcoal, sans-serif;
-        font-size: var(--titleFontSize);
-        letter-spacing: calc(.1 * var(--titleFontSize));
-        background-color: inherit;
-    }
-
     html > body > header#nameplate > p#date {
-        grid-area: date;
         align-self: baseline;
         font-size: 1.5rem;
     }
@@ -201,21 +170,7 @@ html > body > main > section > article > header.main_headline >.by_line {
     }
 
     html > body > main > section > article {
-        columns: calc(var(--titleFontSize) * 1.4); /* +/-17vw */
-    }
-
-    html > body > main > section > article > figure {
-        display: block;
-        width: 100%;
-        margin: .5rem 0 .5rem 0;
-    }
-
-    html > body > main > section > figure > img {
-        width: 100%;
-    }
-
-    html > body > main > section > figure > figcaption.credit {
-        text-align: center;
+        columns: calc(var(--titleFontSize) * 1.4);
     }
 
     html > body > main > section > article > header.main_headline {
@@ -235,90 +190,10 @@ html > body > main > section > article > header.main_headline >.by_line {
 
     html > body > main > section > article > figure.figure > img {
         display: block;
-      max-width: 100%;
-    }
-
-    html > body > main > section > article > h4,
-    html > body > main > section > article > header > h3.headline {
-        margin-bottom: .5rem;
+        max-width: 100%;
     }
 
     footer {
         grid-area: footer;
     }
 }
-/*
-#date {
-    align-self: flex-start;
-    margin-top: 2rem;
-    background-color: inherit;
-}
-
-.section {
-    height: calc(.5 * 140vh);
-    display: grid;
-    grid-template-columns:
-        50% 48%;
-    grid-column-gap: 2%;
-    grid-template-areas:
-        "pic text";
-
-    margin-top: 2rem;
-}
-.main_section {}
-
-figure {
-    display: inline-block;
-}
-
-.main_figure {
-    grid-area: pic;
-    width: 100%;
-}
-.cut {
-    width: 100%;
-}
-.credit {
-    text-align: center;
-    margin-top: .5rem;
-}
-.article {
-    grid-area: text;
-    column-count: 2;
-    column-gap: 4%;
-}
-
-.main_header {
-    column-span: all;
-    margin-bottom: 1rem;
-}
-
-.headline {
-    font-size: 2.5rem;
-}
-.by_line {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-top: .5rem;
-}
-
-.text {
-  text-align: justify;
-  text-justify: inter-word;
-}
-.lead {
-  font-weight: bold;
-}
-
-.secondary_section {
-    display: block;
-}
-
-.secondary_article {
-    column-count: 4;
-    column-gap: 2%;
-}
-
-.footer {
-    display: block;
-} */
